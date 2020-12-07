@@ -19,6 +19,7 @@ const BookType = new GraphQLObjectType({
     id: { type: GraphQLID },
     name: { type: GraphQLString },
     genre: { type: GraphQLString },
+    image: { type: GraphQLString },
     author: {
       type: AuthorType,
       resolve(parent, args) {
@@ -104,6 +105,7 @@ const Mutation = new GraphQLObjectType({
       args: {
         name: { type: GraphQLNonNull(GraphQLString) },
         genre: { type: GraphQLNonNull(GraphQLString) },
+        image: { type: GraphQLNonNull(GraphQLString) },
         authorId: { type: GraphQLNonNull(GraphQLID) },
       },
       resolve(parent, args) {
@@ -111,6 +113,7 @@ const Mutation = new GraphQLObjectType({
           name: args.name,
           genre: args.genre,
           authorId: args.authorId,
+          image: args.image
         });
         return book.save();
       },
