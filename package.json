@@ -4,6 +4,7 @@
   "description": "Simple graphql server",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "dev:server": "nodemon app.js"
   },
   "author": "Oluwatosin Jay",
