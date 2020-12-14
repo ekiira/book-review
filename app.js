@@ -42,6 +42,10 @@ app.use(
   })
 );
 
+app.get('/', (req, res) => {
+  res.send("This is the server-side of the graphql based backend")
+})
+
 const port = process.env.PORT || 4000
 app.listen(port, () => {
   process.stdout.write(`server is running at port ${port}`);
